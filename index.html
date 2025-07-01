@@ -24,40 +24,39 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-800 min-h-screen p-4 sm:p-6 lg:p-8">
 
-    <!-- Tombol Toggle Dark Mode -->
+    <!-- Tombol Toggle Dark Mode & Export PDF -->
     <div class="flex justify-end gap-2 mb-4">
-        <button id="toggleDark" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-2 rounded-lg shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition-all font-medium">
-            🌙 Dark Mode
-        </button>
-        <button id="exportPdfBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition-all font-medium">
-             🖨️ Export PDF
-        </button>
-    </div>
-
-
-    <!-- Judul Utama -->
-    <div class="max-w-5xl mx-auto mt-2 mb-6 text-center">
-        <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Dashboard Perbandingan Simulasi</h1>
-        <p class="text-gray-500 dark:text-gray-300 mt-2">Isi dua dari tiga kolom pertama untuk memulai.</p>
+      <button id="toggleDark" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded-lg shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition-all font-medium">
+        🌙 Dark Mode
+      </button>
+      <button id="exportPdfBtn" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition-all font-medium">
+        🖨️ Export PDF
+      </button>
     </div>
 
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- Judul Utama -->
+    <div class="max-w-5xl mx-auto mt-2 mb-6 text-center">
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white">Dashboard Perbandingan Simulasi</h1>
+        <p class="text-gray-500 dark:text-white mt-2">Isi dua dari tiga kolom pertama untuk memulai.</p>
+    </div>
+
     <!-- Grafik Perbandingan (Chart.js) -->
     <div class="max-w-5xl mx-auto mb-10 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6">
-      <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-6 text-center">Grafik Perbandingan Simulasi</h2>
+      <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 text-center">Grafik Perbandingan Simulasi</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-              <h3 class="text-sm font-bold text-gray-600 dark:text-gray-300 text-center mb-1">Total Nilai Penjualan</h3>
+              <h3 class="text-sm font-bold text-gray-600 dark:text-white text-center mb-1">Total Nilai Penjualan</h3>
               <canvas id="simulasiChartTotal" height="90"></canvas>
           </div>
           <div>
-              <h3 class="text-sm font-bold text-gray-600 dark:text-gray-300 text-center mb-1">Target Keuntungan (Rp)</h3>
+              <h3 class="text-sm font-bold text-gray-600 dark:text-white text-center mb-1">Target Keuntungan (Rp)</h3>
               <canvas id="simulasiChartProfitRp" height="90"></canvas>
           </div>
           <div>
-              <h3 class="text-sm font-bold text-gray-600 dark:text-gray-300 text-center mb-1">Target Keuntungan (%)</h3>
+              <h3 class="text-sm font-bold text-gray-600 dark:text-white text-center mb-1">Target Keuntungan (%)</h3>
               <canvas id="simulasiChartProfitPercent" height="90"></canvas>
           </div>
       </div>
@@ -67,82 +66,74 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Kalkulator 1 -->
             <div class="calculator-card bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col">
-    <input type="text" class="coin-name text-lg font-bold text-gray-800 dark:text-gray-100 w-full border-b-2 border-transparent focus:border-blue-500 outline-none p-1 mb-4 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-300"
-    placeholder="Nama Koin (opsional)">
+    <input type="text" class="coin-name text-lg font-bold text-gray-800 dark:text-white w-full border-b-2 border-transparent focus:border-blue-500 outline-none p-1 mb-4 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-white" placeholder="Nama Koin (opsional)">
     <div class="space-y-4 flex-grow">
-        <p class="text-xs text-center text-gray-400 dark:text-gray-300 -mt-2">Isi 2 dari 3 kolom di bawah ini</p>
-        
+        <p class="text-xs text-center text-gray-400 dark:text-white -mt-2">Isi 2 dari 3 kolom di bawah ini</p>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Jumlah modal (uang) yang Anda gunakan untuk membeli aset, contoh: 1.000.000">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Jumlah modal (uang) yang Anda gunakan untuk membeli aset, contoh: 1.000.000">
                 Jumlah Modal (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Modal adalah dana awal yang Anda pakai untuk membeli aset/koin">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-modal w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="1.000.000">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-modal w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="1.000.000">
             </div>
         </div>
-
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Harga beli per 1 koin/aset (dalam Rupiah)">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Harga beli per 1 koin/aset (dalam Rupiah)">
                 Harga Beli / Aset (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Harga 1 koin/aset pada saat Anda membeli">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-buyPrice w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="Otomatis / Isi">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-buyPrice w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Otomatis / Isi">
             </div>
         </div>
-
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Jumlah aset/koin yang Anda dapatkan dari pembelian modal dan harga di atas">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Jumlah aset/koin yang Anda dapatkan dari pembelian modal dan harga di atas">
                 Aset Diperoleh
                 <span class="text-blue-400 cursor-pointer ml-1" title="Total koin/aset yang Anda dapat setelah pembelian">ℹ️</span>
             </label>
             <div class="relative">
-                <input type="text" class="input-assetQuantity w-full pl-4 pr-12 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="Otomatis / Isi">
-                <span class="coin-name-suffix absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">ASET</span>
+                <input type="text" class="input-assetQuantity w-full pl-4 pr-12 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Otomatis / Isi">
+                <span class="coin-name-suffix absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 dark:text-white">ASET</span>
             </div>
         </div>
-
         <div class="h-px bg-gray-200 dark:bg-gray-700 my-6"></div>
-
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Target harga jual per aset/koin untuk mendapatkan keuntungan">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Target harga jual per aset/koin untuk mendapatkan keuntungan">
                 Target Harga Jual / Aset (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Harga jual per koin/aset yang Anda inginkan agar tercapai target profit">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-sellPrice w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-sellPrice w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
             </div>
         </div>
-
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Keuntungan total (dalam Rupiah) yang ingin Anda capai dari modal awal">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Keuntungan total (dalam Rupiah) yang ingin Anda capai dari modal awal">
                 Target Keuntungan (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Keuntungan bersih yang Anda targetkan dari modal (belum dikurangi fee/beban lain)">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-profitRp w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-profitRp w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
             </div>
         </div>
-
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Keuntungan target Anda dalam bentuk persentase dari modal">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Keuntungan target Anda dalam bentuk persentase dari modal">
                 Target Keuntungan (%)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Berapa persen keuntungan yang diinginkan dari modal?">ℹ️</span>
             </label>
             <div class="relative">
-                <input type="text" class="input-profitPercent w-full pl-4 pr-8 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
-                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">%</span>
+                <input type="text" class="input-profitPercent w-full pl-4 pr-8 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
+                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 dark:text-white">%</span>
             </div>
         </div>
     </div>
     <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
         <div class="flex justify-between items-center">
-            <p class="text-md font-medium text-gray-700 dark:text-gray-200">Total Nilai Penjualan</p>
+            <p class="text-md font-medium text-gray-700 dark:text-white">Total Nilai Penjualan</p>
             <p class="total-after-profit text-xl font-bold text-green-600">Rp -</p>
         </div>
     </div>
@@ -150,78 +141,76 @@
         <button class="reset-button w-full bg-red-500 text-white font-bold py-2.5 px-4 rounded-md hover:bg-red-600 transition-colors">Reset</button>
     </div>
 </div>
-
             <!-- Kalkulator 2 -->
             <div class="calculator-card bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col">
-    <input type="text" class="coin-name text-lg font-bold text-gray-800 dark:text-gray-100 w-full border-b-2 border-transparent focus:border-blue-500 outline-none p-1 mb-4 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-300"
-    placeholder="Nama Koin (opsional)">
+    <input type="text" class="coin-name text-lg font-bold text-gray-800 dark:text-white w-full border-b-2 border-transparent focus:border-blue-500 outline-none p-1 mb-4 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-white" placeholder="Nama Koin (opsional)">
     <div class="space-y-4 flex-grow">
-        <p class="text-xs text-center text-gray-400 dark:text-gray-300 -mt-2">Isi 2 dari 3 kolom di bawah ini</p>
+        <p class="text-xs text-center text-gray-400 dark:text-white -mt-2">Isi 2 dari 3 kolom di bawah ini</p>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Jumlah modal (uang) yang Anda gunakan untuk membeli aset, contoh: 1.000.000">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Jumlah modal (uang) yang Anda gunakan untuk membeli aset, contoh: 1.000.000">
                 Jumlah Modal (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Modal adalah dana awal yang Anda pakai untuk membeli aset/koin">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-modal w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="1.000.000">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-modal w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="1.000.000">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Harga beli per 1 koin/aset (dalam Rupiah)">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Harga beli per 1 koin/aset (dalam Rupiah)">
                 Harga Beli / Aset (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Harga 1 koin/aset pada saat Anda membeli">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-buyPrice w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="Otomatis / Isi">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-buyPrice w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Otomatis / Isi">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Jumlah aset/koin yang Anda dapatkan dari pembelian modal dan harga di atas">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Jumlah aset/koin yang Anda dapatkan dari pembelian modal dan harga di atas">
                 Aset Diperoleh
                 <span class="text-blue-400 cursor-pointer ml-1" title="Total koin/aset yang Anda dapat setelah pembelian">ℹ️</span>
             </label>
             <div class="relative">
-                <input type="text" class="input-assetQuantity w-full pl-4 pr-12 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="Otomatis / Isi">
-                <span class="coin-name-suffix absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">ASET</span>
+                <input type="text" class="input-assetQuantity w-full pl-4 pr-12 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Otomatis / Isi">
+                <span class="coin-name-suffix absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 dark:text-white">ASET</span>
             </div>
         </div>
         <div class="h-px bg-gray-200 dark:bg-gray-700 my-6"></div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Target harga jual per aset/koin untuk mendapatkan keuntungan">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Target harga jual per aset/koin untuk mendapatkan keuntungan">
                 Target Harga Jual / Aset (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Harga jual per koin/aset yang Anda inginkan agar tercapai target profit">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-sellPrice w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-sellPrice w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Keuntungan total (dalam Rupiah) yang ingin Anda capai dari modal awal">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Keuntungan total (dalam Rupiah) yang ingin Anda capai dari modal awal">
                 Target Keuntungan (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Keuntungan bersih yang Anda targetkan dari modal (belum dikurangi fee/beban lain)">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-profitRp w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-profitRp w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Keuntungan target Anda dalam bentuk persentase dari modal">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Keuntungan target Anda dalam bentuk persentase dari modal">
                 Target Keuntungan (%)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Berapa persen keuntungan yang diinginkan dari modal?">ℹ️</span>
             </label>
             <div class="relative">
-                <input type="text" class="input-profitPercent w-full pl-4 pr-8 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
-                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">%</span>
+                <input type="text" class="input-profitPercent w-full pl-4 pr-8 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
+                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 dark:text-white">%</span>
             </div>
         </div>
     </div>
     <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
         <div class="flex justify-between items-center">
-            <p class="text-md font-medium text-gray-700 dark:text-gray-200">Total Nilai Penjualan</p>
+            <p class="text-md font-medium text-gray-700 dark:text-white">Total Nilai Penjualan</p>
             <p class="total-after-profit text-xl font-bold text-green-600">Rp -</p>
         </div>
     </div>
@@ -229,78 +218,76 @@
         <button class="reset-button w-full bg-red-500 text-white font-bold py-2.5 px-4 rounded-md hover:bg-red-600 transition-colors">Reset</button>
     </div>
 </div>
-
             <!-- Kalkulator 3 -->
             <div class="calculator-card bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col">
-    <input type="text" class="coin-name text-lg font-bold text-gray-800 dark:text-gray-100 w-full border-b-2 border-transparent focus:border-blue-500 outline-none p-1 mb-4 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-300"
-    placeholder="Nama Koin (opsional)">
+    <input type="text" class="coin-name text-lg font-bold text-gray-800 dark:text-white w-full border-b-2 border-transparent focus:border-blue-500 outline-none p-1 mb-4 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-white" placeholder="Nama Koin (opsional)">
     <div class="space-y-4 flex-grow">
-        <p class="text-xs text-center text-gray-400 dark:text-gray-300 -mt-2">Isi 2 dari 3 kolom di bawah ini</p>
+        <p class="text-xs text-center text-gray-400 dark:text-white -mt-2">Isi 2 dari 3 kolom di bawah ini</p>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Jumlah modal (uang) yang Anda gunakan untuk membeli aset, contoh: 1.000.000">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Jumlah modal (uang) yang Anda gunakan untuk membeli aset, contoh: 1.000.000">
                 Jumlah Modal (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Modal adalah dana awal yang Anda pakai untuk membeli aset/koin">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-modal w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="1.000.000">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-modal w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="1.000.000">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Harga beli per 1 koin/aset (dalam Rupiah)">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Harga beli per 1 koin/aset (dalam Rupiah)">
                 Harga Beli / Aset (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Harga 1 koin/aset pada saat Anda membeli">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-buyPrice w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="Otomatis / Isi">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-buyPrice w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Otomatis / Isi">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Jumlah aset/koin yang Anda dapatkan dari pembelian modal dan harga di atas">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Jumlah aset/koin yang Anda dapatkan dari pembelian modal dan harga di atas">
                 Aset Diperoleh
                 <span class="text-blue-400 cursor-pointer ml-1" title="Total koin/aset yang Anda dapat setelah pembelian">ℹ️</span>
             </label>
             <div class="relative">
-                <input type="text" class="input-assetQuantity w-full pl-4 pr-12 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md" placeholder="Otomatis / Isi">
-                <span class="coin-name-suffix absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">ASET</span>
+                <input type="text" class="input-assetQuantity w-full pl-4 pr-12 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Otomatis / Isi">
+                <span class="coin-name-suffix absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 dark:text-white">ASET</span>
             </div>
         </div>
         <div class="h-px bg-gray-200 dark:bg-gray-700 my-6"></div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Target harga jual per aset/koin untuk mendapatkan keuntungan">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Target harga jual per aset/koin untuk mendapatkan keuntungan">
                 Target Harga Jual / Aset (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Harga jual per koin/aset yang Anda inginkan agar tercapai target profit">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-sellPrice w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-sellPrice w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Keuntungan total (dalam Rupiah) yang ingin Anda capai dari modal awal">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Keuntungan total (dalam Rupiah) yang ingin Anda capai dari modal awal">
                 Target Keuntungan (Rp)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Keuntungan bersih yang Anda targetkan dari modal (belum dikurangi fee/beban lain)">ℹ️</span>
             </label>
             <div class="relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">Rp</span>
-                <input type="text" class="input-profitRp w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-white">Rp</span>
+                <input type="text" class="input-profitRp w-full pl-10 pr-4 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
             </div>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1" title="Keuntungan target Anda dalam bentuk persentase dari modal">
+            <label class="block text-sm font-medium text-gray-700 dark:text-white mb-1" title="Keuntungan target Anda dalam bentuk persentase dari modal">
                 Target Keuntungan (%)
                 <span class="text-blue-400 cursor-pointer ml-1" title="Berapa persen keuntungan yang diinginkan dari modal?">ℹ️</span>
             </label>
             <div class="relative">
-                <input type="text" class="input-profitPercent w-full pl-4 pr-8 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md" placeholder="Hasil">
-                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">%</span>
+                <input type="text" class="input-profitPercent w-full pl-4 pr-8 py-2 bg-blue-50 dark:bg-blue-900 border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-white" placeholder="Hasil">
+                <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 dark:text-white">%</span>
             </div>
         </div>
     </div>
     <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
         <div class="flex justify-between items-center">
-            <p class="text-md font-medium text-gray-700 dark:text-gray-200">Total Nilai Penjualan</p>
+            <p class="text-md font-medium text-gray-700 dark:text-white">Total Nilai Penjualan</p>
             <p class="total-after-profit text-xl font-bold text-green-600">Rp -</p>
         </div>
     </div>
@@ -312,11 +299,11 @@
     </div>
 
     <!-- Signature di paling bawah -->
-    <footer class="max-w-5xl mx-auto text-center mt-14 mb-4 opacity-70 text-sm text-gray-500 dark:text-gray-300">
+    <footer class="max-w-5xl mx-auto text-center mt-14 mb-4 opacity-70 text-sm text-gray-500 dark:text-white">
       Made with ❤️ ©️ tamawith.ai 2025
     </footer>
 
-    <!-- Panggil file script.js eksternal -->
+    <!-- Script chart, darkmode, export -->
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
